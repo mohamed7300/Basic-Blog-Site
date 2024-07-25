@@ -1,0 +1,12 @@
+body {
+    background-color: aquamarine;
+}
+
+.Posts-List {
+    font-size: large;
+}
+
+textarea {
+    white-space: pre-line;
+    white-space: pre-wrap;
+}

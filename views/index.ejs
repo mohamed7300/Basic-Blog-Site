@@ -1,0 +1,41 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="mt-3 ms-5 me-5">
+        <div class="text-center">
+            <form action="/createpost" method="post">
+
+                <label for="posttitle">Enter Post Title</label><br>
+
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Post Title" aria-label="Username"
+                        aria-describedby="basic-addon1" name="posttitle" required>
+                </div>
+
+                <label for="">Enter Your Post</label><br>
+                <div class="input-group">
+
+                    <textarea class="form-control" aria-label="With textarea" name="postbody"
+                        placeholder="Post..."></textarea>
+                </div>
+
+                <input type="submit" value="Create Post" class="btn btn-primary mt-3">
+            </form>
+        </div>
+    </div>
+    <div class="text-center mt-5">
+        <div class="Posts-List">
+            <!-- for loop to display blog posts links -->
+            <% if(locals.postsTitlesArray) { %>
+                <!-- If statement to check if there is blog posts in the array or not -->
+                <% if(locals.postsTitlesArray.length !==0) { %>
+                    <p>Blog Posts</p>
+                    <% } %>
+                        <% for (let i=0;i<postsTitlesArray.length;i++) { %>
+                            <a href="/posts/<%= postsTitlesArray[i] %>.ejs">
+                                <%= postsTitlesArray[i] %>
+                            </a><br>
+                            <% } %>
+                                <% } %>
+                                    <%- include("partials/footer.ejs") %>
+        </div>
+    </div>
